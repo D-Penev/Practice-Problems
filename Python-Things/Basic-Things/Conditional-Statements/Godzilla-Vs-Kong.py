@@ -1,5 +1,3 @@
-import  math
-from decimal import Decimal
 def godzilla_vs_kong():
     film_budget = float(input())
     walk_on_count = float(input())
