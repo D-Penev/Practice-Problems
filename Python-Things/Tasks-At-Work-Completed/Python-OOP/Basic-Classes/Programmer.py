@@ -9,8 +9,9 @@ class Programmer():
         if self.language == language:
             self.skills += skills_earned
             return  f'{self.name} watched {course_name}'
-        else:
-            return  f'{self.name} does not know {language}'
+
+
+        return  f'{self.name} does not know {language}'
 
     def change_language(self, new_language, skills_needed):
         if self.skills >= skills_needed and self.language != new_language:
