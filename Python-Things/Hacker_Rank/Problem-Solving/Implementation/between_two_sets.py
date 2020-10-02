@@ -1,27 +1,29 @@
 def between_two_sets():
-    arr_sizes = list(map(int, input().split()))
-    arr_one = list(map(int, input().split()))
-    arr_two = list(map(int, input().split()))
-    totalCounter = _get_factor(arr_one, arr_two)
+    arr = list(map(int, input().split()))
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+    gcd = _gcd_(a[0], a[1])
+    lcm = _lcm_(a[0], a[1], gcd)
+    lcm_increment = lcm
+    print(32 % 12 == 0)
+    is_factor = 0
+    while True:
+        test = len(list(filter(lambda x: x % lcm == 0, b)))
+        if test == len(b):
+            is_factor += 1
+            lcm += lcm_increment
+        
 
-def _get_factor(arr1, arr2):
-    counter = 0
-    for i in range(0,len(arr1)):
-        counter += are_all_elements_factor_firstArr(arr1)
-        counter += are_all_elements_factor_firstArr(arr2)
+    return  is_factor
 
-def are_all_elements_factor_firstArr(arr1, curr_value):
-    factorCounter = 0
-    for i in range(0, len(arr1)):
-        if i % curr_value   == 0:
-            factorCounter+=1
+def _lcm_(a,b,gcd):
+    return (a * b) / gcd
 
+def _gcd_(a,b):
+    if b == 0:
+        return  a
+    return  _gcd_(b, a % b)
 
-
-
-
-def _are_all_elements_factor_secondArr(arr2, curr_value):
-    factorCounter = 0
-    for i in range(0, len(arr2)):
-        if i % curr_value == 0:
-            factorCounter += 1
+print(
+    between_two_sets()
+)
